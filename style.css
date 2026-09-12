@@ -1,4 +1,4 @@
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
     height: 100vh;
@@ -18,10 +18,18 @@
     align-items: center;
   }
 
-  #game-container {
+  #game-scaler {
     position: relative;
+    overflow: hidden;
+  }
+
+  #game-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 500px;
     height: 600px;
+    transform-origin: top left;
     background: linear-gradient(to bottom, #000000 0%, #050814 30%, #0d1b3d 60%, #16305e 100%);
     border: 3px solid #4fc3f7;
     border-radius: 12px;

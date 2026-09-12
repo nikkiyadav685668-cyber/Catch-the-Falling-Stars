@@ -68,8 +68,6 @@
   const containerHeight = 600;
   const basketWidth = 90;
 
-  scaleGame();
-
   let basketX = containerWidth / 2 - basketWidth / 2;
   let score = 0;
   let lives = 10;
@@ -109,17 +107,20 @@
   btnRight.addEventListener('mouseup', releaseRight);
   btnRight.addEventListener('mouseleave', releaseRight);
 
+  const gameScaler = document.getElementById('game-scaler');
+
   // Scale the game to fit small mobile screens without changing game logic
   function scaleGame() {
     const availableWidth = window.innerWidth - 20;
-    const availableHeight = window.innerHeight - 120; // leave room for touch buttons
+    const availableHeight = window.innerHeight - 140; // leave room for touch buttons + margins
     const scale = Math.min(1, availableWidth / containerWidth, availableHeight / containerHeight);
     container.style.transform = 'scale(' + scale + ')';
-    container.style.transformOrigin = 'top center';
-    gameWrapper.style.height = (containerHeight * scale) + 'px';
+    gameScaler.style.width = (containerWidth * scale) + 'px';
+    gameScaler.style.height = (containerHeight * scale) + 'px';
   }
   window.addEventListener('resize', scaleGame);
   window.addEventListener('orientationchange', scaleGame);
+  scaleGame();
 
   function updateBasketPosition() {
     if (keys.left) basketX -= 6;
