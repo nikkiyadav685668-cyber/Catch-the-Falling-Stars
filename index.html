@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Catch the Falling Stars</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game-container">
+  <div id="hud">
+    <div>Score: <span id="score">0</span></div>
+    <div>Lives: <span id="lives">10</span></div>
+  </div>
+
+  <div id="basket"></div>
+
+  <div id="start-screen">
+    <h1>⭐ Catch the Falling Stars ⭐</h1>
+    <p>Use <b>← Left</b> and <b>→ Right</b> arrow keys to move the basket.<br>
+    Catch stars to score points. Miss 10 and it's game over!<br>
+    Speed increases as your score grows.</p>
+    <button id="restart-btn" onclick="startGame()">Start Game</button>
+  </div>
+
+  <div id="game-over">
+    <h1>GAME OVER</h1>
+    <p>Final Score: <span id="final-score">0</span></p>
+    <button id="restart-btn" onclick="startGame()">Play Again</button>
+  </div>
+</div>
+
+<script src="script.js">
+
+</script>
+
+</body>
+</html>
