@@ -7,9 +7,14 @@
 </head>
 <body>
 
+<div id="game-wrapper">
 <div id="game-container">
+  <div id="bg-stars"></div>
+  <div id="tree-silhouette"></div>
+
   <div id="hud">
     <div>Score: <span id="score">0</span></div>
+    <div>Best: <span id="high-score">0</span></div>
     <div>Lives: <span id="lives">10</span></div>
   </div>
 
@@ -17,7 +22,7 @@
 
   <div id="start-screen">
     <h1>⭐ Catch the Falling Stars ⭐</h1>
-    <p>Use <b>← Left</b> and <b>→ Right</b> arrow keys to move the basket.<br>
+    <p>Use <b>← Left</b> and <b>→ Right</b> arrow keys (or the buttons below on mobile) to move the basket.<br>
     Catch stars to score points. Miss 10 and it's game over!<br>
     Speed increases as your score grows.</p>
     <button id="restart-btn" onclick="startGame()">Start Game</button>
@@ -26,8 +31,15 @@
   <div id="game-over">
     <h1>GAME OVER</h1>
     <p>Final Score: <span id="final-score">0</span></p>
+    <p id="new-high-msg" style="color:#4fc3f7; display:none;">🎉 New High Score! 🎉</p>
     <button id="restart-btn" onclick="startGame()">Play Again</button>
   </div>
+</div>
+
+<div id="touch-controls">
+  <div class="touch-btn" id="btn-left">◀</div>
+  <div class="touch-btn" id="btn-right">▶</div>
+</div>
 </div>
 
 <script src="script.js">
