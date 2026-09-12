@@ -200,7 +200,7 @@
     stars.forEach(s => container.removeChild(s.el));
     stars = [];
     score = 0;
-    lives = 10;
+    lives = 6;
     fallSpeed = 2.5;
     spawnInterval = 1200;
     basketX = containerWidth / 2 - basketWidth / 2;
