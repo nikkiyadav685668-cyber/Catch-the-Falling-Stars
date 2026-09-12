@@ -1,4 +1,4 @@
-  // Generate random twinkling background stars
+ // Generate random twinkling background stars
   const bgStarsContainer = document.getElementById('bg-stars');
   const NUM_BG_STARS = 90;
   for (let i = 0; i < NUM_BG_STARS; i++) {
