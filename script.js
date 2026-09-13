@@ -70,7 +70,7 @@
 
   let basketX = containerWidth / 2 - basketWidth / 2;
   let score = 0;
-  let lives = 10;
+  let lives = 6;
   let fallSpeed = 2.5;
   let spawnInterval = 1200;
   let gameRunning = false;
@@ -95,17 +95,38 @@
   function pressRight(e) { e.preventDefault(); keys.right = true; }
   function releaseRight(e) { e.preventDefault(); keys.right = false; }
 
-  btnLeft.addEventListener('touchstart', pressLeft);
-  btnLeft.addEventListener('touchend', releaseLeft);
-  btnLeft.addEventListener('mousedown', pressLeft);
-  btnLeft.addEventListener('mouseup', releaseLeft);
-  btnLeft.addEventListener('mouseleave', releaseLeft);
+ // Mobile + Desktop touch controls
+function pressLeft(e) {
+  e.preventDefault();
+  keys.left = true;
+}
 
-  btnRight.addEventListener('touchstart', pressRight);
-  btnRight.addEventListener('touchend', releaseRight);
-  btnRight.addEventListener('mousedown', pressRight);
-  btnRight.addEventListener('mouseup', releaseRight);
-  btnRight.addEventListener('mouseleave', releaseRight);
+function releaseLeft(e) {
+  e.preventDefault();
+  keys.left = false;
+}
+
+function pressRight(e) {
+  e.preventDefault();
+  keys.right = true;
+}
+
+function releaseRight(e) {
+  e.preventDefault();
+  keys.right = false;
+}
+
+// LEFT button
+btnLeft.addEventListener('pointerdown', pressLeft);
+btnLeft.addEventListener('pointerup', releaseLeft);
+btnLeft.addEventListener('pointercancel', releaseLeft);
+btnLeft.addEventListener('pointerleave', releaseLeft);
+
+// RIGHT button
+btnRight.addEventListener('pointerdown', pressRight);
+btnRight.addEventListener('pointerup', releaseRight);
+btnRight.addEventListener('pointercancel', releaseRight);
+btnRight.addEventListener('pointerleave', releaseRight);
 
   const gameScaler = document.getElementById('game-scaler');
 

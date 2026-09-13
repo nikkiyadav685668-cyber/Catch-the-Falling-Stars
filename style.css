@@ -204,6 +204,8 @@
     user-select: none;
     -webkit-user-select: none;
     box-shadow: 0 0 15px rgba(79, 195, 247, 0.5);
+    touch-action: none;
+    cursor: pointer;
   }
 
   .touch-btn:active {
